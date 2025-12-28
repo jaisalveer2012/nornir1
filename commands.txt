@@ -1,0 +1,4 @@
+ntp server 77.77.77.77
+
+router ospf 1
+network 192.168.137.0 0.0.0.255 area 0
