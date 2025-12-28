@@ -1,0 +1,17 @@
+---
+
+R1:
+    hostname: "192.168.137.140"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
+
+R2:
+    hostname: "192.168.137.137"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
