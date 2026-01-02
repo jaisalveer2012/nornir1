@@ -589,3 +589,4 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_ping (failed)
 2026-01-02 21:58:21,800 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
 2026-01-02 21:59:58,906 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
 2026-01-02 22:00:33,247 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-02 22:29:49,928 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
