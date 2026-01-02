@@ -1,3 +1,574 @@
 2025-12-28 14:01:07,202 -  nornir.core -     INFO -        run() - Running task 'show_version' with args {} on 2 hosts
 2025-12-28 14:33:25,377 -  nornir.core -     INFO -        run() - Running task 'show_version' with args {} on 2 hosts
 2025-12-28 15:13:39,462 -  nornir.core -     INFO -        run() - Running task 'show_version' with args {} on 2 hosts
+2025-12-28 15:33:24,865 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_brief' with args {} on 2 hosts
+2025-12-28 15:33:24,867 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:33:24,868 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_config, command="show ip int brief")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:33:24,868 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:33:24,869 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_config, command="show ip int brief")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:34:42,089 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_brief' with args {} on 2 hosts
+2025-12-28 15:34:42,091 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:34:42,091 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_configs, command="show ip int brief")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_configs (failed)
+
+
+2025-12-28 15:34:42,092 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:34:42,092 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_configs, command="show ip int brief")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_configs (failed)
+
+
+2025-12-28 15:35:29,684 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_brief' with args {} on 2 hosts
+2025-12-28 15:35:29,686 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:35:29,687 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_configs, command="show ip int brief")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_configs (failed)
+
+
+2025-12-28 15:35:29,687 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:35:29,687 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_configs, command="show ip int brief")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_configs (failed)
+
+
+2025-12-28 15:37:03,062 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_brief' with args {} on 2 hosts
+2025-12-28 15:37:03,063 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:37:03,064 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:37:03,064 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:37:03,065 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:37:28,308 -  nornir.core -     INFO -        run() - Running task 'show_ip_int_brief' with args {} on 2 hosts
+2025-12-28 15:37:28,310 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-12-28 15:37:28,310 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:37:28,311 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-12-28 15:37:28,311 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'show_ip_int_brief' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in show_ip_int_brief
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:38:59,759 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {} on 2 hosts
+2025-12-28 15:38:59,761 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-12-28 15:38:59,761 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:38:59,761 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-12-28 15:38:59,762 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:40:55,150 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {} on 2 hosts
+2025-12-28 15:40:55,151 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-12-28 15:40:55,153 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:40:55,152 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-12-28 15:40:55,154 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:44:38,060 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 15:44:38,062 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:44:38,062 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:44:38,063 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:44:38,063 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, command="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:47:02,840 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 15:47:02,842 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:47:02,843 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:47:02,843 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:47:02,844 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:49:14,349 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 15:49:14,351 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:49:14,351 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, send_config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:49:14,351 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:49:14,352 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, send_config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:51:27,014 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 15:51:27,016 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'send_config'
+
+2025-12-28 15:51:27,017 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, send_config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:51:27,018 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'send_config'
+
+2025-12-28 15:51:27,018 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, send_config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-12-28 15:57:33,062 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 15:59:01,427 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 15:59:01,428 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:59:01,429 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:59:01,429 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli.tasks.core.send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: 'module' object is not callable
+
+2025-12-28 15:59:01,430 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook2.py", line 8, in send_config_test
+    task.run(task=send_config, config="ntp server 1.1.1.1")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: nornir_scrapli.tasks.core.send_config (failed)
+
+
+2025-12-28 15:59:13,768 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 16:02:13,569 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 16:02:13,571 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs_from_file() got an unexpected keyword argument 'config_file'
+
+2025-12-28 16:02:13,571 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook3.py", line 8, in send_config_test
+    task.run(task=send_configs_from_file, config_file="commands.txt")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-12-28 16:02:13,572 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs_from_file() got an unexpected keyword argument 'config_file'
+
+2025-12-28 16:02:13,572 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook3.py", line 8, in send_config_test
+    task.run(task=send_configs_from_file, config_file="commands.txt")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-12-28 16:04:04,809 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 16:05:35,168 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 2 hosts
+2025-12-28 16:18:29,103 -  nornir.core -     INFO -        run() - Running task 'send_netmiko_command' with args {} on 2 hosts
+2025-12-28 16:24:57,971 -  nornir.core -     INFO -        run() - Running task 'send_netmiko_configs' with args {} on 2 hosts
+2025-12-28 16:25:20,059 -  nornir.core -     INFO -        run() - Running task 'send_netmiko_configs' with args {} on 2 hosts
+2025-12-28 16:31:06,230 -  nornir.core -     INFO -        run() - Running task 'send_netmiko_config_save' with args {} on 2 hosts
+2025-12-28 16:31:06,232 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_save_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_save_config() got an unexpected keyword argument 'command_string'
+
+2025-12-28 16:31:06,232 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_save_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_save_config() got an unexpected keyword argument 'command_string'
+
+2025-12-28 16:31:06,233 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_netmiko_config_save' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook6.py", line 8, in send_netmiko_config_save
+    task.run(task=netmiko_save_config, command_string="write memory", confirm=True, confirm_response="y")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_save_config (failed)
+
+
+2025-12-28 16:31:06,233 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_netmiko_config_save' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook6.py", line 8, in send_netmiko_config_save
+    task.run(task=netmiko_save_config, command_string="write memory", confirm=True, confirm_response="y")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_save_config (failed)
+
+
+2025-12-28 16:32:22,364 -  nornir.core -     INFO -        run() - Running task 'send_netmiko_config_save' with args {} on 2 hosts
+2025-12-28 16:32:22,367 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_save_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_save_config() got an unexpected keyword argument 'command_string'
+
+2025-12-28 16:32:22,368 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_netmiko_config_save' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook6.py", line 8, in send_netmiko_config_save
+    task.run(task=netmiko_save_config, command_string="write memory")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_save_config (failed)
+
+
+2025-12-28 16:32:22,369 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_save_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_save_config() got an unexpected keyword argument 'command_string'
+
+2025-12-28 16:32:22,369 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_netmiko_config_save' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook6.py", line 8, in send_netmiko_config_save
+    task.run(task=netmiko_save_config, command_string="write memory")
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_save_config (failed)
+
+
+2025-12-28 16:33:01,372 -  nornir.core -     INFO -        run() - Running task 'send_netmiko_config_save' with args {} on 2 hosts
+2025-12-28 16:40:32,930 -  nornir.core -     INFO -        run() - Running task 'napalm_ip_ping' with args {} on 2 hosts
+2025-12-28 16:40:32,932 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: napalm_ping() got an unexpected keyword argument 'destination'
+
+2025-12-28 16:40:32,933 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_ip_ping' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook7.py", line 8, in napalm_ip_ping
+    task.run(task=napalm_ping, destination="192.168.137.128", count=10, size=1500)
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_ping (failed)
+
+
+2025-12-28 16:40:32,934 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: napalm_ping() got an unexpected keyword argument 'destination'
+
+2025-12-28 16:40:32,935 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_ip_ping' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook7.py", line 8, in napalm_ip_ping
+    task.run(task=napalm_ping, destination="192.168.137.128", count=10, size=1500)
+  File "/root/nornir/.venv-nornir/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_ping (failed)
+
+
+2025-12-28 16:40:58,664 -  nornir.core -     INFO -        run() - Running task 'napalm_ip_ping' with args {} on 2 hosts
+2025-12-28 17:21:17,677 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2025-12-28 17:38:59,354 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
