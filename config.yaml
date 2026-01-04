@@ -3,7 +3,7 @@
 inventory:
     plugin: SimpleInventory
     options:
-        host_file: "hosts.yaml"
+        host_file: "/root/nornir1/hosts.yaml"
         group_file: "groups.yaml"
         defaults_file: "defaults.yaml"
 
