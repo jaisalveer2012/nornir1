@@ -47,3 +47,11 @@ vEX-1:
     platform: "junos"
     groups:
       - junos_group
+
+CE6800:
+    hostname: "192.168.137.144"
+    username: "netadmin"
+    password: "Admin@098"
+    platform: "huawei_vrp"
+    groups:
+      - huawei_group
