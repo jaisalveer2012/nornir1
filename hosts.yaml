@@ -39,3 +39,11 @@ R4:
     platform: "ios"
     groups:
       - cisco_group
+
+vEX-1:
+    hostname: "192.168.137.145"
+    username: "root"
+    password: "Juniper"
+    platform: "junos"
+    groups:
+      - junos_group
