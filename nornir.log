@@ -1553,3 +1553,458 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2026-01-03 10:45:20,268 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
 2026-01-03 10:48:21,466 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
 2026-01-03 10:53:49,572 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 10:57:22,057 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 10:59:59,376 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:01:27,684 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:02:00,664 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:09:55,859 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:10:01,392 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["interface"]
+KeyError: 'interface'
+
+2026-01-03 11:10:01,393 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["interface"]
+KeyError: 'interface'
+
+2026-01-03 11:13:36,175 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:13:41,942 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["interface"]
+KeyError: 'interface'
+
+2026-01-03 11:13:41,946 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["interface"]
+KeyError: 'interface'
+
+2026-01-03 11:14:25,803 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:14:31,606 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["Loopback111"]
+KeyError: 'Loopback111'
+
+2026-01-03 11:15:41,200 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:15:46,981 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["Loopback111"]
+KeyError: 'Loopback111'
+
+2026-01-03 11:28:22,411 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:28:28,416 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["Loopback111"]
+KeyError: 'Loopback111'
+
+2026-01-03 11:42:07,660 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:47:12,092 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:47:52,555 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 11:48:28,269 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:02:03,990 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:17:14,867 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:40:12,964 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:40:18,615 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 15, in structured_output
+    port_id = cdp_index[num][port_id]
+UnboundLocalError: local variable 'port_id' referenced before assignment
+
+2026-01-03 12:40:18,618 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 15, in structured_output
+    port_id = cdp_index[num][port_id]
+UnboundLocalError: local variable 'port_id' referenced before assignment
+
+2026-01-03 12:41:34,034 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:41:39,247 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    port_id = cdp_index[num][port_id]
+UnboundLocalError: local variable 'port_id' referenced before assignment
+
+2026-01-03 12:41:39,250 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    port_id = cdp_index[num][port_id]
+UnboundLocalError: local variable 'port_id' referenced before assignment
+
+2026-01-03 12:43:02,883 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:43:08,769 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    port_id = cdp_index[num][port_id]
+UnboundLocalError: local variable 'port_id' referenced before assignment
+
+2026-01-03 12:43:08,772 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    port_id = cdp_index[num][port_id]
+UnboundLocalError: local variable 'port_id' referenced before assignment
+
+2026-01-03 12:46:25,901 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:46:31,914 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    report_port = cdp_index[num][port_id]
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:46:31,915 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    report_port = cdp_index[num][port_id]
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:48:51,110 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:48:56,919 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    report_port = cdp_index[num][port_id]
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:48:56,921 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    report_port = cdp_index[num][port_id]
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:50:44,850 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:50:50,948 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    report_port = cdp_index[num][port_id]
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:50:50,950 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 16, in structured_output
+    report_port = cdp_index[num][port_id]
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:52:34,705 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 12:52:40,670 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 17, in structured_output
+    rprint(f"{task.host} is connected to {remote_device} via {local_interface} to {port_id}")
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:52:40,673 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook11.py", line 17, in structured_output
+    rprint(f"{task.host} is connected to {remote_device} via {local_interface} to {port_id}")
+NameError: name 'port_id' is not defined
+
+2026-01-03 12:54:40,033 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:07:33,451 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:09:42,280 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:10:15,865 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:28:22,107 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:29:25,388 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:30:07,059 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:33:58,142 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:33:58,143 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2026-01-03 13:33:58,144 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook14.py", line 7, in structured_output
+    output = task.run(task=netmiko_send_command, command="show clock", use_textfsm=True)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-01-03 13:33:58,144 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2026-01-03 13:33:58,145 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook14.py", line 7, in structured_output
+    output = task.run(task=netmiko_send_command, command="show clock", use_textfsm=True)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-01-03 13:34:44,441 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:35:32,996 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:43:45,389 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 13:44:45,140 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 14:00:16,899 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 14:00:16,901 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'commands'
+
+2026-01-03 14:00:16,902 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook15.py", line 8, in structured_output
+    output = task.run(task=send_command, commands="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-03 14:00:16,903 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'commands'
+
+2026-01-03 14:00:16,903 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook15.py", line 8, in structured_output
+    output = task.run(task=send_command, commands="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-03 14:01:50,933 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 14:01:50,935 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'commands'
+
+2026-01-03 14:01:50,935 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook15.py", line 8, in structured_output
+    output = task.run(task=send_command, commands="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-03 14:01:50,935 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'commands'
+
+2026-01-03 14:01:50,936 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook15.py", line 8, in structured_output
+    output = task.run(task=send_command, commands="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-03 14:02:46,355 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 14:02:46,356 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'commands'
+
+2026-01-03 14:02:46,356 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook15.py", line 8, in structured_output
+    output = task.run(task=send_command, commands="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-03 14:02:46,357 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'commands'
+
+2026-01-03 14:02:46,357 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/runbook15.py", line 8, in structured_output
+    output = task.run(task=send_command, commands="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-03 14:03:21,102 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 14:03:47,729 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 14:09:27,982 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-03 14:10:02,266 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-04 13:07:09,444 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 2 hosts
+2026-01-04 13:07:15,535 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook10.py", line 11, in structured_output
+    interfaces = task.host["facts"]["Loopback111"]
+KeyError: 'Loopback111'
+
+2026-01-04 13:23:43,767 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 3 hosts
+2026-01-04 13:23:43,836 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 160, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 99, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 508, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 329, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 291, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 171, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+******************************************************************************************************** Module not found! *********************************************************************************************************
+                            Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!                             
+************************************************************************************************************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 101, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2026-01-04 13:23:43,837 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 13:24:22,272 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 3 hosts
+2026-01-04 13:24:23,209 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 13:24:23,210 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
