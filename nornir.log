@@ -2419,3 +2419,1883 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 
 
 2026-01-04 15:06:29,633 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 5 hosts
+2026-01-04 20:54:29,170 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 6 hosts
+2026-01-04 20:54:32,943 - nornir.core.task -    ERROR -      start() - Host 'vEX-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 294, in channel_authenticate_ssh
+    buf = self.read()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 71, in read
+    buf = self.transport.read()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2026-01-04 20:54:32,943 - nornir.core.task -    ERROR -      start() - Host 'vEX-1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 20:54:33,268 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2026-01-04 20:54:33,268 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 20:54:33,270 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2026-01-04 20:54:33,270 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 20:54:33,272 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2026-01-04 20:54:33,272 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 20:54:33,274 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2026-01-04 20:54:33,275 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 20:59:09,432 -  nornir.core -     INFO -        run() - Running task 'get_interfaces' with args {} on 6 hosts
+2026-01-04 20:59:11,807 - nornir.core.task -    ERROR -      start() - Host 'vEX-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 2363, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/packet.py", line 663, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/transport/ssh.py", line 316, in connect
+    self._transport.start_client()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 768, in start_client
+    raise e
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 2179, in run
+    self._check_banner()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 2367, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/jnpr/junos/device.py", line 1390, in open
+    self._conn = netconf_ssh.connect(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/manager.py", line 242, in connect
+    return connect_ssh(*args, **kwds)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/manager.py", line 155, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/transport/ssh.py", line 318, in connect
+    raise SSHError('Negotiation failed: %s' % e)
+ncclient.transport.errors.SSHError: Negotiation failed: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/junos/junos.py", line 143, in open
+    self.device.open(auto_probe=self.auto_probe)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/jnpr/junos/device.py", line 1425, in open
+    raise EzErrors.ConnectRefusedError(self)
+jnpr.junos.exception.ConnectRefusedError: ConnectRefusedError(192.168.137.145)
+
+2026-01-04 20:59:11,807 - nornir.core.task -    ERROR -      start() - Host 'vEX-1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 20:59:12,567 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.139
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.139:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.139
+
+2026-01-04 20:59:12,568 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 20:59:12,570 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.140
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.140:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.140
+
+2026-01-04 20:59:12,572 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 20:59:12,571 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.138:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.138
+
+2026-01-04 20:59:12,573 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 20:59:12,571 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.137:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.137
+
+2026-01-04 20:59:12,574 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 21:03:45,209 -  nornir.core -     INFO -        run() - Running task 'get_interfaces' with args {} on 6 hosts
+2026-01-04 21:03:48,332 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.139
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.139:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.139
+
+2026-01-04 21:03:48,333 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 21:03:48,334 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.137:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.137
+
+2026-01-04 21:03:48,334 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 21:03:48,335 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.140
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.140:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.140
+
+2026-01-04 21:03:48,336 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 21:03:48,337 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.138:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.138
+
+2026-01-04 21:03:48,337 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:31:05,069 -  nornir.core -     INFO -        run() - Running task 'get_interfaces' with args {} on 7 hosts
+2026-01-04 22:31:05,100 - nornir.core.task -    ERROR -      start() - Host 'CE6800': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "huawei_vrp". Is the library installed?
+
+2026-01-04 22:31:05,100 - nornir.core.task -    ERROR -      start() - Host 'CE6800': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:31:07,631 - nornir.core.task -    ERROR -      start() - Host 'vEX-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 2363, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/packet.py", line 663, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/transport/ssh.py", line 316, in connect
+    self._transport.start_client()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 768, in start_client
+    raise e
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 2179, in run
+    self._check_banner()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/transport.py", line 2367, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/jnpr/junos/device.py", line 1390, in open
+    self._conn = netconf_ssh.connect(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/manager.py", line 242, in connect
+    return connect_ssh(*args, **kwds)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/manager.py", line 155, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/ncclient/transport/ssh.py", line 318, in connect
+    raise SSHError('Negotiation failed: %s' % e)
+ncclient.transport.errors.SSHError: Negotiation failed: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/junos/junos.py", line 143, in open
+    self.device.open(auto_probe=self.auto_probe)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/jnpr/junos/device.py", line 1425, in open
+    raise EzErrors.ConnectRefusedError(self)
+jnpr.junos.exception.ConnectRefusedError: ConnectRefusedError(192.168.137.145)
+
+2026-01-04 22:31:07,632 - nornir.core.task -    ERROR -      start() - Host 'vEX-1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:31:08,176 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.140
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.140:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.140
+
+2026-01-04 22:31:08,177 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.137:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.137
+
+2026-01-04 22:31:08,177 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:31:08,178 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:31:08,178 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.138:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.138
+
+2026-01-04 22:31:08,179 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:38:10,209 -  nornir.core -     INFO -        run() - Running task 'get_interfaces' with args {} on 7 hosts
+2026-01-04 22:38:10,232 - nornir.core.task -    ERROR -      start() - Host 'CE6800': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "huawei_vrp". Is the library installed?
+
+2026-01-04 22:38:10,232 - nornir.core.task -    ERROR -      start() - Host 'CE6800': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:38:13,322 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.138:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.138
+
+2026-01-04 22:38:13,322 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:38:13,325 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.140
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.140:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.140
+
+2026-01-04 22:38:13,325 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:38:13,326 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.137:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.137
+
+2026-01-04 22:38:13,327 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:40:11,712 -  nornir.core -     INFO -        run() - Running task 'get_interfaces' with args {} on 7 hosts
+2026-01-04 22:40:11,730 - nornir.core.task -    ERROR -      start() - Host 'CE6800': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "huawei_vrp". Is the library installed?
+
+2026-01-04 22:40:11,731 - nornir.core.task -    ERROR -      start() - Host 'CE6800': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:40:14,792 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.137:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.137
+
+2026-01-04 22:40:14,792 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:40:14,793 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.138:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.138
+
+2026-01-04 22:40:14,793 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:40:14,794 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.140
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.140:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.140
+
+2026-01-04 22:40:14,795 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:51:49,074 -  nornir.core -     INFO -        run() - Running task 'get_interfaces' with args {} on 7 hosts
+2026-01-04 22:51:52,161 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.138:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.138
+
+2026-01-04 22:51:52,161 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:51:52,161 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.140
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.140:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.140
+
+2026-01-04 22:51:52,162 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:51:52,162 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.137:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.137
+
+2026-01-04 22:51:52,162 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:55:41,136 -  nornir.core -     INFO -        run() - Running task 'get_interfaces' with args {} on 7 hosts
+2026-01-04 22:55:44,200 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.138:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.138
+
+2026-01-04 22:55:44,201 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:55:44,201 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.137:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.137
+
+2026-01-04 22:55:44,202 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2026-01-04 22:55:44,202 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.137.140
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.137.140:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.137.140
+
+2026-01-04 22:55:44,202 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook16.py", line 8, in get_interfaces
+    task.run(task=napalm_get, getters=["get_interfaces"])
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
