@@ -2008,3 +2008,414 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 
 
+2026-01-04 13:45:40,786 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 3 hosts
+2026-01-04 13:45:41,762 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 13:45:41,763 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 13:48:18,198 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 3 hosts
+2026-01-04 13:54:32,719 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 4 hosts
+2026-01-04 14:58:50,516 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 5 hosts
+2026-01-04 14:58:51,456 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 14:58:51,457 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 14:58:53,494 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 14:58:53,495 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 14:59:35,669 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 5 hosts
+2026-01-04 14:59:36,624 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 14:59:36,625 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 14:59:36,637 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 14:59:36,637 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 15:00:28,244 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 5 hosts
+2026-01-04 15:00:28,318 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 160, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 99, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 508, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 329, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 291, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 171, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+******************************************************************************************************** Module not found! *********************************************************************************************************
+                            Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!                             
+************************************************************************************************************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 101, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2026-01-04 15:00:28,319 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 15:00:28,319 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 160, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 99, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 508, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 329, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 291, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/factory.py", line 171, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+******************************************************************************************************** Module not found! *********************************************************************************************************
+                            Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!                             
+************************************************************************************************************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 101, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2026-01-04 15:00:28,320 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 15:01:41,608 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 5 hosts
+2026-01-04 15:01:42,444 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 15:01:42,445 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 15:01:42,642 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2026-01-04 15:01:42,642 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'structured_output' failed with traceback:
+Traceback (most recent call last):
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/nornir1/./runbook15.py", line 9, in structured_output
+    output = task.run(task=send_command, command="show ip interface")
+  File "/root/nornir1/.venv/lib64/python3.9/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2026-01-04 15:06:29,633 -  nornir.core -     INFO -        run() - Running task 'structured_output' with args {} on 5 hosts
