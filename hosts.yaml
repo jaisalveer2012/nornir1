@@ -23,3 +23,19 @@ R3:
     platform: "ios"
     groups:
       - cisco_group
+
+R7:
+    hostname: "192.168.137.138"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
+
+R4:
+    hostname: "192.168.137.143"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
