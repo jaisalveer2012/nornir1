@@ -15,3 +15,11 @@ R2:
     platform: "ios"
     groups:
       - cisco_group
+
+R3:
+    hostname: "192.168.137.139"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
