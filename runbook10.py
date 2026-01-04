@@ -13,5 +13,4 @@ def structured_output(task):
 
 results = nr.run(task=structured_output)
 # print_result(results)
-# ipdb.set_trace()
-
+ipdb.set_trace()
