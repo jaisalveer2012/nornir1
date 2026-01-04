@@ -4,3 +4,6 @@ cisco_group:
 
 junos_group:
   platform: "junos"
+
+huawei_group:
+  platform: "huawei_vrp"
