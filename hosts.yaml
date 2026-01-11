@@ -37,6 +37,9 @@ R4:
     username: "root"
     password: "admin123"
     platform: "ios"
+    extra:
+      timeout_ops: 60
+      timeout_transport: 60
     groups:
       - cisco_group
 
