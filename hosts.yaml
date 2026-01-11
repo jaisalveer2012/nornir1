@@ -7,6 +7,16 @@ R1:
     platform: "ios"
     groups:
       - cisco_group
+    data:                                                   # Extra data for Jinja2 template
+      ospf:
+        process_id: 111
+        networks:
+          - ip: "192.168.137.0"
+            wildcard: "0.0.0.255"
+            area: 0
+          - ip: "1.1.1.1"
+            wildcard: "0.0.0.0"
+            area: 0
 
 R2:
     hostname: "192.168.137.137"
