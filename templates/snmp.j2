@@ -1,0 +1,3 @@
+snmp-server community {{ host.facts.snmp.snmp_community }}
+snmp-agent community read {{ host.facts.snmp.snmp_community }}
+ntp server {{ host.facts.ntp.server }} prefer
