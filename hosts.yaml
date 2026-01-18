@@ -51,6 +51,14 @@ vEX-1:
     groups:
       - junos_group
 
+vQFX-1:
+    hostname: "192.168.137.146"
+    username: "root"
+    password: "Juniper"
+    platform: "junos"
+    groups:
+      - junos_group
+
 CE6800:
     hostname: "192.168.137.144"
     username: "netadmin"
