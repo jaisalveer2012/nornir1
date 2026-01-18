@@ -1,0 +1,70 @@
+---
+
+R1:
+    hostname: "192.168.137.140"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
+    data:                                                   # Extra data for Jinja2 template
+      ospf:
+        process_id: 111
+        networks:
+          - ip: "192.168.137.0"
+            wildcard: "0.0.0.255"
+            area: 0
+          - ip: "1.1.1.1"
+            wildcard: "0.0.0.0"
+            area: 0
+
+R2:
+    hostname: "192.168.137.137"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
+
+R3:
+    hostname: "192.168.137.139"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
+
+R7:
+    hostname: "192.168.137.138"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    groups:
+      - cisco_group
+
+R4:
+    hostname: "192.168.137.143"
+    username: "root"
+    password: "admin123"
+    platform: "ios"
+    extra:
+      timeout_ops: 60
+      timeout_transport: 60
+    groups:
+      - cisco_group
+
+vEX-1:
+    hostname: "192.168.137.145"
+    username: "root"
+    password: "Juniper"
+    platform: "junos"
+    groups:
+      - junos_group
+
+CE6800:
+    hostname: "192.168.137.144"
+    username: "netadmin"
+    password: "Admin@098"
+    platform: "huawei_vrp"
+    groups:
+      - huawei_group
