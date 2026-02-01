@@ -1,0 +1,7 @@
+Interface                      Status         Protocol Description
+Gi0/0                          up             up
+Gi0/1                          up             up
+Gi0/2                          up             up
+Gi0/3                          up             up
+Lo1                            up             up
+Lo11                           up             up

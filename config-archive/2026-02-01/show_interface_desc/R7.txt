@@ -1,0 +1,6 @@
+Interface                      Status         Protocol Description
+Et0/0                          admin down     down
+Et0/1                          up             up
+Et0/2                          up             up       P2P connectivity between R7 and R1
+Et0/3                          up             up
+Lo1                            up             up       configured via ansible
