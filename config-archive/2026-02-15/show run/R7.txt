@@ -1,0 +1,125 @@
+Building configuration...
+
+Current configuration : 1410 bytes
+!
+! Last configuration change at 12:03:02 UTC Sun Feb 15 2026
+!
+version 15.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R7
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+ip domain name test.lab.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+archive
+ log config
+  record rc
+  logging enable
+username root privilege 15 password 0 admin123
+username admin privilege 15 password 0 admin123
+username ansible privilege 15
+!
+redundancy
+!
+!
+ip ssh pubkey-chain
+  username ansible
+   key-hash ssh-rsa F96CFC5DBBFE47976FDE74D83B552C7D root@Ansibel-AE
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback1
+ description configured via ansible
+ ip address 7.7.7.7 255.255.255.255
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+!
+interface Ethernet0/1
+ ip address 192.168.137.138 255.255.255.0
+!
+interface Ethernet0/2
+ description P2P connectivity between R7 and R1
+ ip address 17.1.1.2 255.255.255.252
+!
+interface Ethernet0/3
+ no ip address
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+end
