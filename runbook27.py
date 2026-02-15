@@ -16,7 +16,23 @@ def get_routes(task):
     for prefix in prefixes:
         net = ip_network(prefix)
         if ipaddr in net:
-            print(f"{ipaddr} is present on device {task.host} (network: {net})")
+           source_proto = prefixes[prefix]["source_protocol"]
+           if source_proto == "connected":
+               try:
+                   outgoing_intf = prefixes[prefix]["next_hop"]["outgoing_interface"]
+                   for intf in outgoing_intf:
+                       exit_inf = intf
+                       print (f"{task.host} is connected to {target} via interface {exit_inf}")
+               except KeyError:
+                   pass
+        else:
+            try:
+                next_hop_list = prefixes[prefix]["next_hop"]["next_hop_list"]
+                for key in next_hop_list:
+                    next_hop = next_hop_list[key]["next_hop"]
+                    print (f"{task.host} can reach {target} via next hop {next_hop} {source_proto}")
+            except KeyError:
+                pass
 
 
 nr.run(task=get_routes)
