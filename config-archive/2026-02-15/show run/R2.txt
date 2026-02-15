@@ -1,6 +1,6 @@
 Building configuration...
 
-Current configuration : 6770 bytes
+Current configuration : 6842 bytes
 !
 ! Last configuration change at 11:58:56 UTC Sun Feb 15 2026
 !
@@ -186,7 +186,8 @@ interface GigabitEthernet1
  no mop sysid
 !
 interface GigabitEthernet2
- no ip address
+ ip address 21.0.0.2 255.255.255.252
+ ip ospf 1 area 0
  negotiation auto
  cdp enable
  no mop enabled
@@ -210,6 +211,7 @@ router eigrp 10
  network 10.0.0.0 0.0.0.255
 !
 router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
  network 192.168.137.0 0.0.0.255 area 0
 !
 ip forward-protocol nd

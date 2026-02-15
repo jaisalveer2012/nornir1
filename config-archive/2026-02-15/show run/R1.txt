@@ -1,6 +1,6 @@
 Building configuration...
 
-Current configuration : 3484 bytes
+Current configuration : 3524 bytes
 !
 version 15.6
 service timestamps debug datetime msec
@@ -69,7 +69,8 @@ interface Loopback11
  ip address 11.11.11.11 255.255.255.255
 !
 interface GigabitEthernet0/0
- no ip address
+ ip address 21.0.0.1 255.255.255.252
+ ip ospf 1 area 0
  duplex full
  speed auto
  media-type rj45
